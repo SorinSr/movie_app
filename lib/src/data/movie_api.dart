@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
-import 'package:weather_app/src/model/movie.dart';
+import 'package:movies_app/src/model/movie.dart';
 
 class MoviesApi {
   MoviesApi({required String apiUrl, required Client client})
@@ -23,10 +23,12 @@ class MoviesApi {
     final Map<String, dynamic> data = body['data'] as Map<String, dynamic>;
     final List<dynamic> movies = data['movies'] as List<dynamic>;
 
+    print('>>>>>>  Movies list data raw :::');
+    print(data);
+
     final List<Movie> result = movies.map((dynamic json) => Movie.fromJson(json)).toList();
 
     return result;
   }
-
 
 }
