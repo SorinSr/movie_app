@@ -1,4 +1,4 @@
-import 'package:movies_app/src/actions/get_movies_actions.dart';
+import 'package:movies_app/src/actions/index.dart';
 import 'package:movies_app/src/data/movie_api.dart';
 import 'package:movies_app/src/model/app_state.dart';
 import 'package:movies_app/src/model/movie.dart';
@@ -18,10 +18,10 @@ class AppEpics {
     );
   }
 
-  Stream _getMovies(Stream<GetMoviesActions> action, EpicStore<AppState> store) {
+  Stream<AppAction> _getMovies(Stream<GetMoviesActions> action, EpicStore<AppState> store) {
     return action
         .asyncMap((GetMoviesActions action) => _moviesApi.getMovies(store.state.page))
-        .map<Object>((List<Movie> movies) => GetMoviesSuccessful(movies))
-        .onErrorReturnWith((Object error, StackTrace stackTrace) => GetMoviesError(error));
+        .map<AppAction>((List<Movie> movieList) => GetMoviesActions.successful(movieList))
+        .onErrorReturnWith((Object error, StackTrace stackTrace) => GetMoviesActions.error(error, stackTrace));
   }
 }

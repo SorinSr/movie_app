@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:http/http.dart';
-import 'package:movies_app/src/actions/get_movies_actions.dart';
+import 'package:movies_app/src/actions/index.dart';
 import 'package:movies_app/src/data/movie_api.dart';
 import 'package:movies_app/src/model/app_state.dart';
 import 'package:movies_app/src/presentation/presentation_page.dart';
@@ -30,7 +30,7 @@ void main() {
     ],
   );
 
-  store.dispatch(GetMoviesActions());
+  store.dispatch(const GetMoviesActions());
 
   runApp(MoviesApp(store: store));
 }
@@ -45,7 +45,7 @@ class MoviesApp extends StatelessWidget {
     return StoreProvider<AppState>(
       store: store,
       child: MaterialApp(
-        home: const PresentationPage(),
+        home:  const PresentationPage(),
         theme: ThemeData.dark(),
       ),
     );

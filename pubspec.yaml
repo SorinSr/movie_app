@@ -17,7 +17,7 @@ dependencies:
   redux: ^5.0.0
   flutter_redux: ^0.8.2
   redux_epics: ^0.15.0
-  freezed_annotation: ^0.14.2
+  freezed_annotation: ^0.14.3
 
 
   cupertino_icons: ^1.0.3
@@ -27,10 +27,12 @@ dev_dependencies:
     sdk: flutter
   build_runner: ^2.0.6
   built_value_generator: ^8.1.1
-  freezed: ^0.14.2
+  freezed: ^0.14.3
 
 dependency_overrides:
   rxdart: ^0.27.1
+  analyzer: ^2.0.0
+  meta: ^1.7.0
 
 flutter:
 
