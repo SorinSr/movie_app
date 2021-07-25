@@ -13,14 +13,15 @@ class AppEpics {
   Epic<AppState> get epic {
     return combineEpics(
       <Epic<AppState>>[
-        TypedEpic<AppState, GetMoviesActions>(_getMovies),
+        TypedEpic<AppState, GetMoviesActionsStart>(_getMovies),
       ],
     );
   }
 
-  Stream<AppAction> _getMovies(Stream<GetMoviesActions> action, EpicStore<AppState> store) {
+  Stream<AppAction> _getMovies(Stream<GetMoviesActionsStart> action, EpicStore<AppState> store) {
+    // print('<<<<<<<<< Actions called from epics    ::::'+action.toString());
     return action
-        .asyncMap((GetMoviesActions action) => _moviesApi.getMovies(store.state.page))
+        .asyncMap((GetMoviesActionsStart action) => _moviesApi.getMovies(store.state.page))
         .map<AppAction>((List<Movie> movieList) => GetMoviesActions.successful(movieList))
         .onErrorReturnWith((Object error, StackTrace stackTrace) => GetMoviesActions.error(error, stackTrace));
   }

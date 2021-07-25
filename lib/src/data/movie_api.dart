@@ -23,8 +23,7 @@ class MoviesApi {
     final Map<String, dynamic> data = body['data'] as Map<String, dynamic>;
     final List<dynamic> movies = data['movies'] as List<dynamic>;
 
-    print('>>>>>>  Movies list data raw :::');
-    print(data);
+    print('>>>>>>>>>>>>  Movies API API API API ::::' + movies.toString());
 
     final List<Movie> result = movies.map((dynamic json) => Movie.fromJson(json)).toList();
 

@@ -15,6 +15,7 @@ Reducer<AppState> reducer = combineReducers(
 );
 
 AppState _getMovies(AppState state, GetMoviesActions action) {
+  // print('++++    _getMovies was called from reducer');
   return state.rebuild(
     (AppStateBuilder b) {
       b.isLoading = true;
@@ -30,10 +31,10 @@ AppState _getMoviesSuccessful(AppState state, GetMoviesActionsSuccessful action)
         ..isLoading = false
         ..page = state.page + 1;
 
-      print('>>>> Data from reducer :::');
+      // print('>>>>>>>> Data from reducer       _getMoviesSuccessful  :::');
 
-      print(builder.movies);
-      print(builder.page);
+      // print(builder.movies);
+      // print(builder.page);
     },
   );
 }
