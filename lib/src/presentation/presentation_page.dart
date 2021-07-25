@@ -161,6 +161,9 @@ class MovieDetails extends StatelessWidget {
               ),Padding(
                 padding: const EdgeInsets.all(2.0),
                 child: Text(movie!.genres.toString(), textAlign: TextAlign.center),
+              ),Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: Text(movie!.rating.toString(), textAlign: TextAlign.center),
               ),
               Image.network(movie!.largeCoverImage, width: 300, height: 450),
               ElevatedButton(
