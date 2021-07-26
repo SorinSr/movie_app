@@ -48,6 +48,7 @@ class _PresentationPageState extends State<PresentationPage> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('MoviesApp The best App'),
