@@ -31,7 +31,9 @@ void main() {
 
   // store.dispatch(const GetMoviesActionsStart());
 
-  runApp(MoviesApp(store: store));
+  runApp(
+    MoviesApp(store: store),
+  );
 }
 
 class MoviesApp extends StatelessWidget {

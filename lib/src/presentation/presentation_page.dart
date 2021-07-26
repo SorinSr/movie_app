@@ -34,7 +34,9 @@ class _PresentationPageState extends State<PresentationPage> {
     final double threshold = (MediaQuery.of(context).size.height) * 0.2;
 
     if (diff < threshold && !isLoading) {
-      store.dispatch(const GetMoviesActions());
+      store.dispatch(
+        const GetMoviesActions(),
+      );
     }
   }
 
@@ -48,11 +50,13 @@ class _PresentationPageState extends State<PresentationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('MoviesApp lalalalal'),
+        title: const Text('MoviesApp The best App'),
         actions: <Widget>[
           IsLoadingContainer(
             builder: (BuildContext context, bool isLoading) {
-              print('ISLOADING +++++++++  ' + isLoading.toString());
+              print(
+                'ISLOADING +++++++++  ' + isLoading.toString(),
+              );
               if (isLoading) {
                 return const Center(
                   child: CircularProgressIndicator(),
@@ -63,7 +67,9 @@ class _PresentationPageState extends State<PresentationPage> {
                 icon: const Icon(Icons.movie_filter_sharp),
                 onPressed: () {
                   final Store<AppState> store = StoreProvider.of<AppState>(context);
-                  store.dispatch(const GetMoviesActions());
+                  store.dispatch(
+                    const GetMoviesActions(),
+                  );
                 },
               );
             },
@@ -99,11 +105,15 @@ class _PresentationPageState extends State<PresentationPage> {
                       // child: Image.network(movie.largeCoverImage),
                       child: IconButton(
                           onPressed: () {
-                            print("Movie title:   " + movie.title);
+                            print('Movie title:   ' + movie.title);
 
                             Navigator.push(
                               context,
-                              MaterialPageRoute<Widget>(builder: (BuildContext context) => MovieDetails(movies[index])),
+                              MaterialPageRoute<Widget>(
+                                builder: (BuildContext context) => MovieDetails(
+                                  movie: movies[index],
+                                ),
+                              ),
                             );
                           },
                           icon: Image.network(movie.largeCoverImage)),
@@ -127,11 +137,8 @@ class _PresentationPageState extends State<PresentationPage> {
 }
 
 class MovieDetails extends StatelessWidget {
-  MovieDetails(Movie movie) {
-    this.movie = movie;
-  }
-
-  Movie? movie;
+  const MovieDetails({Key? key, required this.movie}) : super(key: key);
+  final Movie? movie;
 
   @override
   Widget build(BuildContext context) {
@@ -145,7 +152,7 @@ class MovieDetails extends StatelessWidget {
           borderRadius: BorderRadius.circular(14.0),
         ),
         elevation: 24,
-        child:  SingleChildScrollView(
+        child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
               Padding(
@@ -155,13 +162,16 @@ class MovieDetails extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Text(movie!.summary.toString(), textAlign: TextAlign.center),
-              ),Padding(
+              ),
+              Padding(
                 padding: const EdgeInsets.all(2.0),
                 child: Text(movie!.year.toString(), textAlign: TextAlign.center),
-              ),Padding(
+              ),
+              Padding(
                 padding: const EdgeInsets.all(2.0),
                 child: Text(movie!.genres.toString(), textAlign: TextAlign.center),
-              ),Padding(
+              ),
+              Padding(
                 padding: const EdgeInsets.all(2.0),
                 child: Text(movie!.rating.toString(), textAlign: TextAlign.center),
               ),
