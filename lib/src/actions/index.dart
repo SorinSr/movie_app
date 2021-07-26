@@ -4,6 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:movies_app/src/model/movie.dart';
 
 part 'get_movies_freezed.dart';
+
 part 'index.freezed.dart';
 
 abstract class AppAction {}

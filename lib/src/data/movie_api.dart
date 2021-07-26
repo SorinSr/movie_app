@@ -29,5 +29,4 @@ class MoviesApi {
 
     return result;
   }
-
 }
