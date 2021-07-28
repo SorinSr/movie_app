@@ -106,21 +106,21 @@ class _PresentationPageState extends State<PresentationPage> {
                       borderRadius: BorderRadius.circular(15.0),
                     ),
                     child: GridTile(
-                      // child: Image.network(movie.largeCoverImage),
                       child: IconButton(
-                          onPressed: () {
-                            print('Movie title:   ' + movie.title);
+                        onPressed: () {
+                          print('Movie title:   ' + movie.title);
 
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute<Widget>(
-                                builder: (BuildContext context) => MovieDetails(
-                                  movie: movies[index],
-                                ),
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute<Widget>(
+                              builder: (BuildContext context) => MovieDetails(
+                                movie: movies[index],
                               ),
-                            );
-                          },
-                          icon: Image.network(movie.largeCoverImage)),
+                            ),
+                          );
+                        },
+                        icon: Image.network(movie.largeCoverImage),
+                      ),
                       footer: GridTileBar(
                         backgroundColor: Colors.white,
                         title: Text(
