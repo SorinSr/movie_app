@@ -438,3 +438,132 @@ abstract class GetMoviesActionsError implements GetMoviesActions, ErrorAction {
   $GetMoviesActionsErrorCopyWith<GetMoviesActionsError> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$SelectedMovieTearOff {
+  const _$SelectedMovieTearOff();
+
+  _SelectedMovie call(int movieId) {
+    return _SelectedMovie(
+      movieId,
+    );
+  }
+}
+
+/// @nodoc
+const $SelectedMovie = _$SelectedMovieTearOff();
+
+/// @nodoc
+mixin _$SelectedMovie {
+  int get movieId => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SelectedMovieCopyWith<SelectedMovie> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SelectedMovieCopyWith<$Res> {
+  factory $SelectedMovieCopyWith(
+          SelectedMovie value, $Res Function(SelectedMovie) then) =
+      _$SelectedMovieCopyWithImpl<$Res>;
+  $Res call({int movieId});
+}
+
+/// @nodoc
+class _$SelectedMovieCopyWithImpl<$Res>
+    implements $SelectedMovieCopyWith<$Res> {
+  _$SelectedMovieCopyWithImpl(this._value, this._then);
+
+  final SelectedMovie _value;
+  // ignore: unused_field
+  final $Res Function(SelectedMovie) _then;
+
+  @override
+  $Res call({
+    Object? movieId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      movieId: movieId == freezed
+          ? _value.movieId
+          : movieId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$SelectedMovieCopyWith<$Res>
+    implements $SelectedMovieCopyWith<$Res> {
+  factory _$SelectedMovieCopyWith(
+          _SelectedMovie value, $Res Function(_SelectedMovie) then) =
+      __$SelectedMovieCopyWithImpl<$Res>;
+  @override
+  $Res call({int movieId});
+}
+
+/// @nodoc
+class __$SelectedMovieCopyWithImpl<$Res>
+    extends _$SelectedMovieCopyWithImpl<$Res>
+    implements _$SelectedMovieCopyWith<$Res> {
+  __$SelectedMovieCopyWithImpl(
+      _SelectedMovie _value, $Res Function(_SelectedMovie) _then)
+      : super(_value, (v) => _then(v as _SelectedMovie));
+
+  @override
+  _SelectedMovie get _value => super._value as _SelectedMovie;
+
+  @override
+  $Res call({
+    Object? movieId = freezed,
+  }) {
+    return _then(_SelectedMovie(
+      movieId == freezed
+          ? _value.movieId
+          : movieId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SelectedMovie implements _SelectedMovie {
+  const _$_SelectedMovie(this.movieId);
+
+  @override
+  final int movieId;
+
+  @override
+  String toString() {
+    return 'SelectedMovie(movieId: $movieId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SelectedMovie &&
+            (identical(other.movieId, movieId) ||
+                const DeepCollectionEquality().equals(other.movieId, movieId)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(movieId);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SelectedMovieCopyWith<_SelectedMovie> get copyWith =>
+      __$SelectedMovieCopyWithImpl<_SelectedMovie>(this, _$identity);
+}
+
+abstract class _SelectedMovie implements SelectedMovie {
+  const factory _SelectedMovie(int movieId) = _$_SelectedMovie;
+
+  @override
+  int get movieId => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$SelectedMovieCopyWith<_SelectedMovie> get copyWith =>
+      throw _privateConstructorUsedError;
+}

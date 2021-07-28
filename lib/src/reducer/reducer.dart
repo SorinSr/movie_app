@@ -11,6 +11,7 @@ Reducer<AppState> reducer = combineReducers(
     TypedReducer<AppState, GetMoviesActions>(_getMovies),
     TypedReducer<AppState, GetMoviesActionsSuccessful>(_getMoviesSuccessful),
     TypedReducer<AppState, GetMoviesActionsError>(_getMoviesError),
+    TypedReducer<AppState, SelectedMovie>(_setSelectedMovie),
   ],
 );
 
@@ -49,6 +50,14 @@ AppState _getMoviesError(AppState state, GetMoviesActionsError action) {
       print('>>>> Error from reducer :::');
 
       print(builder.error);
+    },
+  );
+}
+
+AppState _setSelectedMovie(AppState state, SelectedMovie action) {
+  return state.rebuild(
+    (AppStateBuilder builder) {
+      builder.selectedMovie = action.movieId;
     },
   );
 }

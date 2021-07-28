@@ -109,13 +109,11 @@ class _PresentationPageState extends State<PresentationPage> {
                       child: IconButton(
                         onPressed: () {
                           print('Movie title:   ' + movie.title);
-
+                          StoreProvider.of<AppState>(context).dispatch( SelectedMovie(movie.id));
                           Navigator.push(
                             context,
                             MaterialPageRoute<Widget>(
-                              builder: (BuildContext context) => MovieDetails(
-                                movie: movies[index],
-                              ),
+                              builder: (BuildContext context) => const MovieDetails(),
                             ),
                           );
                         },

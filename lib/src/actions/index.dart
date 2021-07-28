@@ -5,6 +5,8 @@ import 'package:movies_app/src/model/movie.dart';
 
 part 'get_movies_freezed.dart';
 
+part 'selected_movie.dart';
+
 part 'index.freezed.dart';
 
 abstract class AppAction {}
