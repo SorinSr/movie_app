@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of user;
+part of app_user;
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<User> _$userSerializer = new _$UserSerializer();
+Serializer<AppUser> _$appUserSerializer = new _$AppUserSerializer();
 
-class _$UserSerializer implements StructuredSerializer<User> {
+class _$AppUserSerializer implements StructuredSerializer<AppUser> {
   @override
-  final Iterable<Type> types = const [User, _$User];
+  final Iterable<Type> types = const [AppUser, _$AppUser];
   @override
-  final String wireName = 'User';
+  final String wireName = 'AppUser';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, User object,
+  Iterable<Object?> serialize(Serializers serializers, AppUser object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'uid',
@@ -39,9 +39,9 @@ class _$UserSerializer implements StructuredSerializer<User> {
   }
 
   @override
-  User deserialize(Serializers serializers, Iterable<Object?> serialized,
+  AppUser deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new UserBuilder();
+    final result = new AppUserBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -72,7 +72,7 @@ class _$UserSerializer implements StructuredSerializer<User> {
   }
 }
 
-class _$User extends User {
+class _$AppUser extends AppUser {
   @override
   final String uid;
   @override
@@ -82,31 +82,31 @@ class _$User extends User {
   @override
   final String? photoUrl;
 
-  factory _$User([void Function(UserBuilder)? updates]) =>
-      (new UserBuilder()..update(updates)).build();
+  factory _$AppUser([void Function(AppUserBuilder)? updates]) =>
+      (new AppUserBuilder()..update(updates)).build();
 
-  _$User._(
+  _$AppUser._(
       {required this.uid,
       required this.username,
       required this.email,
       this.photoUrl})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(uid, 'User', 'uid');
-    BuiltValueNullFieldError.checkNotNull(username, 'User', 'username');
-    BuiltValueNullFieldError.checkNotNull(email, 'User', 'email');
+    BuiltValueNullFieldError.checkNotNull(uid, 'AppUser', 'uid');
+    BuiltValueNullFieldError.checkNotNull(username, 'AppUser', 'username');
+    BuiltValueNullFieldError.checkNotNull(email, 'AppUser', 'email');
   }
 
   @override
-  User rebuild(void Function(UserBuilder) updates) =>
+  AppUser rebuild(void Function(AppUserBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  UserBuilder toBuilder() => new UserBuilder()..replace(this);
+  AppUserBuilder toBuilder() => new AppUserBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is User &&
+    return other is AppUser &&
         uid == other.uid &&
         username == other.username &&
         email == other.email &&
@@ -122,7 +122,7 @@ class _$User extends User {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('User')
+    return (newBuiltValueToStringHelper('AppUser')
           ..add('uid', uid)
           ..add('username', username)
           ..add('email', email)
@@ -131,8 +131,8 @@ class _$User extends User {
   }
 }
 
-class UserBuilder implements Builder<User, UserBuilder> {
-  _$User? _$v;
+class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
+  _$AppUser? _$v;
 
   String? _uid;
   String? get uid => _$this._uid;
@@ -150,9 +150,9 @@ class UserBuilder implements Builder<User, UserBuilder> {
   String? get photoUrl => _$this._photoUrl;
   set photoUrl(String? photoUrl) => _$this._photoUrl = photoUrl;
 
-  UserBuilder();
+  AppUserBuilder();
 
-  UserBuilder get _$this {
+  AppUserBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _uid = $v.uid;
@@ -165,25 +165,25 @@ class UserBuilder implements Builder<User, UserBuilder> {
   }
 
   @override
-  void replace(User other) {
+  void replace(AppUser other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$User;
+    _$v = other as _$AppUser;
   }
 
   @override
-  void update(void Function(UserBuilder)? updates) {
+  void update(void Function(AppUserBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$User build() {
+  _$AppUser build() {
     final _$result = _$v ??
-        new _$User._(
-            uid: BuiltValueNullFieldError.checkNotNull(uid, 'User', 'uid'),
+        new _$AppUser._(
+            uid: BuiltValueNullFieldError.checkNotNull(uid, 'AppUser', 'uid'),
             username: BuiltValueNullFieldError.checkNotNull(
-                username, 'User', 'username'),
-            email:
-                BuiltValueNullFieldError.checkNotNull(email, 'User', 'email'),
+                username, 'AppUser', 'username'),
+            email: BuiltValueNullFieldError.checkNotNull(
+                email, 'AppUser', 'email'),
             photoUrl: photoUrl);
     replace(_$result);
     return _$result;
