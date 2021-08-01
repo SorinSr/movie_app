@@ -108,9 +108,8 @@ class _PresentationPageState extends State<PresentationPage> {
                     child: GridTile(
                       child: IconButton(
                         onPressed: () {
+                          print('Movie title:   ' + movie.title);
                           StoreProvider.of<AppState>(context).dispatch(SelectedMovie(movie.id));
-                          print('Movie title:   ' + movie.title + ' ' + movie.id.toString());
-
                           Navigator.push(
                             context,
                             MaterialPageRoute<Widget>(
