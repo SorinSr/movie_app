@@ -25,4 +25,6 @@ class AppEpics {
         .map<AppAction>((List<Movie> movieList) => GetMoviesActions.successful(movieList))
         .onErrorReturnWith((Object error, StackTrace stackTrace) => GetMoviesActions.error(error, stackTrace));
   }
+
+
 }

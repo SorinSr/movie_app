@@ -440,6 +440,500 @@ abstract class GetMoviesActionsError implements GetMoviesActions, ErrorAction {
 }
 
 /// @nodoc
+class _$RegisterTearOff {
+  const _$RegisterTearOff();
+
+  RegisterStart call(
+      String email, String password, void Function(AppAction) result) {
+    return RegisterStart(
+      email,
+      password,
+      result,
+    );
+  }
+
+  RegisterSuccessful successful(AppUser user) {
+    return RegisterSuccessful(
+      user,
+    );
+  }
+
+  RegisterError error(Object error, StackTrace stackTrace) {
+    return RegisterError(
+      error,
+      stackTrace,
+    );
+  }
+}
+
+/// @nodoc
+const $Register = _$RegisterTearOff();
+
+/// @nodoc
+mixin _$Register {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String email, String password, void Function(AppAction) result)
+        $default, {
+    required TResult Function(AppUser user) successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String email, String password, void Function(AppAction) result)?
+        $default, {
+    TResult Function(AppUser user)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(RegisterStart value) $default, {
+    required TResult Function(RegisterSuccessful value) successful,
+    required TResult Function(RegisterError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(RegisterStart value)? $default, {
+    TResult Function(RegisterSuccessful value)? successful,
+    TResult Function(RegisterError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RegisterCopyWith<$Res> {
+  factory $RegisterCopyWith(Register value, $Res Function(Register) then) =
+      _$RegisterCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$RegisterCopyWithImpl<$Res> implements $RegisterCopyWith<$Res> {
+  _$RegisterCopyWithImpl(this._value, this._then);
+
+  final Register _value;
+  // ignore: unused_field
+  final $Res Function(Register) _then;
+}
+
+/// @nodoc
+abstract class $RegisterStartCopyWith<$Res> {
+  factory $RegisterStartCopyWith(
+          RegisterStart value, $Res Function(RegisterStart) then) =
+      _$RegisterStartCopyWithImpl<$Res>;
+  $Res call({String email, String password, void Function(AppAction) result});
+}
+
+/// @nodoc
+class _$RegisterStartCopyWithImpl<$Res> extends _$RegisterCopyWithImpl<$Res>
+    implements $RegisterStartCopyWith<$Res> {
+  _$RegisterStartCopyWithImpl(
+      RegisterStart _value, $Res Function(RegisterStart) _then)
+      : super(_value, (v) => _then(v as RegisterStart));
+
+  @override
+  RegisterStart get _value => super._value as RegisterStart;
+
+  @override
+  $Res call({
+    Object? email = freezed,
+    Object? password = freezed,
+    Object? result = freezed,
+  }) {
+    return _then(RegisterStart(
+      email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as void Function(AppAction),
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RegisterStart implements RegisterStart {
+  const _$RegisterStart(this.email, this.password, this.result);
+
+  @override
+  final String email;
+  @override
+  final String password;
+  @override
+  final void Function(AppAction) result;
+
+  @override
+  String toString() {
+    return 'Register(email: $email, password: $password, result: $result)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is RegisterStart &&
+            (identical(other.email, email) ||
+                const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.password, password) ||
+                const DeepCollectionEquality()
+                    .equals(other.password, password)) &&
+            (identical(other.result, result) ||
+                const DeepCollectionEquality().equals(other.result, result)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(email) ^
+      const DeepCollectionEquality().hash(password) ^
+      const DeepCollectionEquality().hash(result);
+
+  @JsonKey(ignore: true)
+  @override
+  $RegisterStartCopyWith<RegisterStart> get copyWith =>
+      _$RegisterStartCopyWithImpl<RegisterStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String email, String password, void Function(AppAction) result)
+        $default, {
+    required TResult Function(AppUser user) successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return $default(email, password, result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String email, String password, void Function(AppAction) result)?
+        $default, {
+    TResult Function(AppUser user)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(email, password, result);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(RegisterStart value) $default, {
+    required TResult Function(RegisterSuccessful value) successful,
+    required TResult Function(RegisterError value) error,
+  }) {
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(RegisterStart value)? $default, {
+    TResult Function(RegisterSuccessful value)? successful,
+    TResult Function(RegisterError value)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RegisterStart implements Register {
+  const factory RegisterStart(
+          String email, String password, void Function(AppAction) result) =
+      _$RegisterStart;
+
+  String get email => throw _privateConstructorUsedError;
+  String get password => throw _privateConstructorUsedError;
+  void Function(AppAction) get result => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $RegisterStartCopyWith<RegisterStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RegisterSuccessfulCopyWith<$Res> {
+  factory $RegisterSuccessfulCopyWith(
+          RegisterSuccessful value, $Res Function(RegisterSuccessful) then) =
+      _$RegisterSuccessfulCopyWithImpl<$Res>;
+  $Res call({AppUser user});
+}
+
+/// @nodoc
+class _$RegisterSuccessfulCopyWithImpl<$Res>
+    extends _$RegisterCopyWithImpl<$Res>
+    implements $RegisterSuccessfulCopyWith<$Res> {
+  _$RegisterSuccessfulCopyWithImpl(
+      RegisterSuccessful _value, $Res Function(RegisterSuccessful) _then)
+      : super(_value, (v) => _then(v as RegisterSuccessful));
+
+  @override
+  RegisterSuccessful get _value => super._value as RegisterSuccessful;
+
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(RegisterSuccessful(
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as AppUser,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RegisterSuccessful implements RegisterSuccessful {
+  const _$RegisterSuccessful(this.user);
+
+  @override
+  final AppUser user;
+
+  @override
+  String toString() {
+    return 'Register.successful(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is RegisterSuccessful &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+
+  @JsonKey(ignore: true)
+  @override
+  $RegisterSuccessfulCopyWith<RegisterSuccessful> get copyWith =>
+      _$RegisterSuccessfulCopyWithImpl<RegisterSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String email, String password, void Function(AppAction) result)
+        $default, {
+    required TResult Function(AppUser user) successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return successful(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String email, String password, void Function(AppAction) result)?
+        $default, {
+    TResult Function(AppUser user)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(RegisterStart value) $default, {
+    required TResult Function(RegisterSuccessful value) successful,
+    required TResult Function(RegisterError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(RegisterStart value)? $default, {
+    TResult Function(RegisterSuccessful value)? successful,
+    TResult Function(RegisterError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RegisterSuccessful implements Register {
+  const factory RegisterSuccessful(AppUser user) = _$RegisterSuccessful;
+
+  AppUser get user => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $RegisterSuccessfulCopyWith<RegisterSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RegisterErrorCopyWith<$Res> {
+  factory $RegisterErrorCopyWith(
+          RegisterError value, $Res Function(RegisterError) then) =
+      _$RegisterErrorCopyWithImpl<$Res>;
+  $Res call({Object error, StackTrace stackTrace});
+}
+
+/// @nodoc
+class _$RegisterErrorCopyWithImpl<$Res> extends _$RegisterCopyWithImpl<$Res>
+    implements $RegisterErrorCopyWith<$Res> {
+  _$RegisterErrorCopyWithImpl(
+      RegisterError _value, $Res Function(RegisterError) _then)
+      : super(_value, (v) => _then(v as RegisterError));
+
+  @override
+  RegisterError get _value => super._value as RegisterError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+    Object? stackTrace = freezed,
+  }) {
+    return _then(RegisterError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+      stackTrace == freezed
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements(ErrorAction)
+class _$RegisterError implements RegisterError {
+  const _$RegisterError(this.error, this.stackTrace);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+
+  @override
+  String toString() {
+    return 'Register.error(error: $error, stackTrace: $stackTrace)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is RegisterError &&
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)) &&
+            (identical(other.stackTrace, stackTrace) ||
+                const DeepCollectionEquality()
+                    .equals(other.stackTrace, stackTrace)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(error) ^
+      const DeepCollectionEquality().hash(stackTrace);
+
+  @JsonKey(ignore: true)
+  @override
+  $RegisterErrorCopyWith<RegisterError> get copyWith =>
+      _$RegisterErrorCopyWithImpl<RegisterError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String email, String password, void Function(AppAction) result)
+        $default, {
+    required TResult Function(AppUser user) successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return error(this.error, stackTrace);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String email, String password, void Function(AppAction) result)?
+        $default, {
+    TResult Function(AppUser user)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(RegisterStart value) $default, {
+    required TResult Function(RegisterSuccessful value) successful,
+    required TResult Function(RegisterError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(RegisterStart value)? $default, {
+    TResult Function(RegisterSuccessful value)? successful,
+    TResult Function(RegisterError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RegisterError implements Register, ErrorAction {
+  const factory RegisterError(Object error, StackTrace stackTrace) =
+      _$RegisterError;
+
+  Object get error => throw _privateConstructorUsedError;
+  StackTrace get stackTrace => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $RegisterErrorCopyWith<RegisterError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$SelectedMovieTearOff {
   const _$SelectedMovieTearOff();
 
