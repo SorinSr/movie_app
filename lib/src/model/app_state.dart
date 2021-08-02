@@ -3,6 +3,7 @@ library app_state;
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:movies_app/src/model/app_user.dart';
 
 import 'movie.dart';
 import 'serializers.dart';
@@ -31,6 +32,8 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
   int get page;
 
   int? get selectedMovie;
+
+  AppUser? get user;
 
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this)! as Map<String, dynamic>;
 

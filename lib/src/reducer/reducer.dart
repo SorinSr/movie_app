@@ -12,11 +12,12 @@ Reducer<AppState> reducer = combineReducers(
     TypedReducer<AppState, GetMoviesActionsSuccessful>(_getMoviesSuccessful),
     TypedReducer<AppState, GetMoviesActionsError>(_getMoviesError),
     TypedReducer<AppState, SelectedMovie>(_setSelectedMovie),
+    TypedReducer<AppState, RegisterSuccessful>(_registerSuccessful),
+
   ],
 );
 
 AppState _getMovies(AppState state, GetMoviesActions action) {
-  // print('++++    _getMovies was called from reducer');
   return state.rebuild(
     (AppStateBuilder b) {
       b.isLoading = true;
@@ -31,11 +32,6 @@ AppState _getMoviesSuccessful(AppState state, GetMoviesActionsSuccessful action)
         ..movies.addAll(action.movieList)
         ..isLoading = false
         ..page = state.page + 1;
-
-      // print('>>>>>>>> Data from reducer       _getMoviesSuccessful  :::');
-
-      // print(builder.movies);
-      // print(builder.page);
     },
   );
 }
@@ -46,8 +42,6 @@ AppState _getMoviesError(AppState state, GetMoviesActionsError action) {
       builder
         ..isLoading = false
         ..error = '${action.error}';
-
-      print('>>>> Error from reducer :::');
 
       print(builder.error);
     },
@@ -60,4 +54,11 @@ AppState _setSelectedMovie(AppState state, SelectedMovie action) {
       builder.selectedMovie = action.movieId;
     },
   );
+}
+
+
+AppState _registerSuccessful(AppState state, RegisterSuccessful action) {
+  return state.rebuild((AppStateBuilder builder) {
+    builder.user = action.user.toBuilder();
+  });
 }

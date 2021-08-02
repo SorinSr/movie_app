@@ -1,6 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:http/http.dart';
+import 'package:movies_app/src/data/auth_api.dart';
 import 'package:movies_app/src/data/movie_api.dart';
 import 'package:movies_app/src/model/app_state.dart';
 import 'package:movies_app/src/presentation/presentation_page.dart';
@@ -8,16 +11,24 @@ import 'package:movies_app/src/reducer/reducer.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
 
+import 'package:firebase_core/firebase_core.dart';
+
 import 'epic/epic_movies.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+  final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
+
   const String apiUrl = 'https://yts.mx/api/v2';
   final Client client = Client();
 
   final MoviesApi moviesApi = MoviesApi(apiUrl: apiUrl, client: client);
+  final AuthApi authApi = AuthApi(firebaseAuth: _firebaseAuth, firebaseFirestore: _firebaseFirestore);
 
-  // final AppMiddleware appMiddleware = AppMiddleware(moviesApi: moviesApi);
-  final AppEpics appEpics = AppEpics(moviesApi: moviesApi);
+  final AppEpics appEpics = AppEpics(moviesApi: moviesApi, authApi: authApi);
 
   final Store<AppState> store = Store<AppState>(
     reducer,
