@@ -15,48 +15,56 @@ class MovieDetails extends StatelessWidget {
       builder: (BuildContext context, Movie movie) {
         return Scaffold(
           appBar: AppBar(
-            title: Text('Movie details:  \n' + movie.title),
+            title: Text(movie.title),
           ),
           body: SingleChildScrollView(
-              child: Card(
-                margin: const EdgeInsets.all(10),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(14.0),
-                ),
-                elevation: 24,
-                child: Column(
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(5, 15, 1, 5),
-                      child: Text(movie.title.toString()),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Text(movie.summary.toString(), textAlign: TextAlign.center),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(2.0),
-                      child: Text(movie.year.toString(), textAlign: TextAlign.center),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(2.0),
-                      child: Text(movie.genres.toString(), textAlign: TextAlign.center),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(2.0),
-                      child: Text(movie.rating.toString(), textAlign: TextAlign.center),
-                    ),
-                    Image.network(movie.largeCoverImage, width: 300, height: 450),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: const Text('Go back!'),
-                    ),
-                  ],
-                ),
+            child: Card(
+              margin: const EdgeInsets.all(10),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(14.0),
+              ),
+              elevation: 24,
+              child: Column(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(5, 15, 1, 5),
+                    child: Text(movie.title.toString()),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text(movie.summary.toString(), textAlign: TextAlign.center),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: Text(movie.year.toString(), textAlign: TextAlign.center),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: Text(movie.genres.toString(), textAlign: TextAlign.center),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: Text(movie.rating.toString(), textAlign: TextAlign.center),
+                  ),
+                  Image.network(movie.largeCoverImage, width: 300, height: 450),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Text('Go back!'),
+                  ),
+                ],
               ),
             ),
+          ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {},
+            elevation: 20,
+            child: Icon(
+              Icons.comment_bank_outlined,
+              color: Theme.of(context).secondaryHeaderColor,
+            ),
+          ),
         );
       },
     );

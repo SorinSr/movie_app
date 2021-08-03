@@ -1,5 +1,6 @@
 import 'package:movies_app/src/actions/index.dart';
 import 'package:movies_app/src/model/app_state.dart';
+import 'package:movies_app/src/model/app_user.dart';
 import 'package:redux/redux.dart';
 
 Reducer<AppState> reducer = combineReducers(
@@ -13,7 +14,8 @@ Reducer<AppState> reducer = combineReducers(
     TypedReducer<AppState, GetMoviesActionsError>(_getMoviesError),
     TypedReducer<AppState, SelectedMovie>(_setSelectedMovie),
     TypedReducer<AppState, RegisterSuccessful>(_registerSuccessful),
-
+    TypedReducer<AppState, SignOutSuccessful>(_signOutSuccessful),
+    TypedReducer<AppState, InitAppSuccessful>(_initAppSuccessul),
   ],
 );
 
@@ -56,9 +58,20 @@ AppState _setSelectedMovie(AppState state, SelectedMovie action) {
   );
 }
 
-
 AppState _registerSuccessful(AppState state, RegisterSuccessful action) {
   return state.rebuild((AppStateBuilder builder) {
     builder.user = action.user.toBuilder();
+  });
+}
+
+AppState _signOutSuccessful(AppState state, SignOutSuccessful action) {
+  return state.rebuild((AppStateBuilder builder) {
+    builder.user = null;
+  });
+}
+
+AppState _initAppSuccessul(AppState state, InitAppSuccessful action) {
+  return state.rebuild((AppStateBuilder builder) {
+    builder.user = action.user?.toBuilder();
   });
 }

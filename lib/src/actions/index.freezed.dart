@@ -934,6 +934,806 @@ abstract class RegisterError implements Register, ErrorAction {
 }
 
 /// @nodoc
+class _$SignOutTearOff {
+  const _$SignOutTearOff();
+
+  SignOutStart call() {
+    return const SignOutStart();
+  }
+
+  SignOutSuccessful successful() {
+    return const SignOutSuccessful();
+  }
+
+  SignOutError error(Object error, StackTrace stackTrace) {
+    return SignOutError(
+      error,
+      stackTrace,
+    );
+  }
+}
+
+/// @nodoc
+const $SignOut = _$SignOutTearOff();
+
+/// @nodoc
+mixin _$SignOut {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function() $default, {
+    required TResult Function() successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function()? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(SignOutStart value) $default, {
+    required TResult Function(SignOutSuccessful value) successful,
+    required TResult Function(SignOutError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(SignOutStart value)? $default, {
+    TResult Function(SignOutSuccessful value)? successful,
+    TResult Function(SignOutError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SignOutCopyWith<$Res> {
+  factory $SignOutCopyWith(SignOut value, $Res Function(SignOut) then) =
+      _$SignOutCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SignOutCopyWithImpl<$Res> implements $SignOutCopyWith<$Res> {
+  _$SignOutCopyWithImpl(this._value, this._then);
+
+  final SignOut _value;
+  // ignore: unused_field
+  final $Res Function(SignOut) _then;
+}
+
+/// @nodoc
+abstract class $SignOutStartCopyWith<$Res> {
+  factory $SignOutStartCopyWith(
+          SignOutStart value, $Res Function(SignOutStart) then) =
+      _$SignOutStartCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SignOutStartCopyWithImpl<$Res> extends _$SignOutCopyWithImpl<$Res>
+    implements $SignOutStartCopyWith<$Res> {
+  _$SignOutStartCopyWithImpl(
+      SignOutStart _value, $Res Function(SignOutStart) _then)
+      : super(_value, (v) => _then(v as SignOutStart));
+
+  @override
+  SignOutStart get _value => super._value as SignOutStart;
+}
+
+/// @nodoc
+
+class _$SignOutStart implements SignOutStart {
+  const _$SignOutStart();
+
+  @override
+  String toString() {
+    return 'SignOut()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is SignOutStart);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function() $default, {
+    required TResult Function() successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return $default();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function()? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(SignOutStart value) $default, {
+    required TResult Function(SignOutSuccessful value) successful,
+    required TResult Function(SignOutError value) error,
+  }) {
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(SignOutStart value)? $default, {
+    TResult Function(SignOutSuccessful value)? successful,
+    TResult Function(SignOutError value)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignOutStart implements SignOut {
+  const factory SignOutStart() = _$SignOutStart;
+}
+
+/// @nodoc
+abstract class $SignOutSuccessfulCopyWith<$Res> {
+  factory $SignOutSuccessfulCopyWith(
+          SignOutSuccessful value, $Res Function(SignOutSuccessful) then) =
+      _$SignOutSuccessfulCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SignOutSuccessfulCopyWithImpl<$Res> extends _$SignOutCopyWithImpl<$Res>
+    implements $SignOutSuccessfulCopyWith<$Res> {
+  _$SignOutSuccessfulCopyWithImpl(
+      SignOutSuccessful _value, $Res Function(SignOutSuccessful) _then)
+      : super(_value, (v) => _then(v as SignOutSuccessful));
+
+  @override
+  SignOutSuccessful get _value => super._value as SignOutSuccessful;
+}
+
+/// @nodoc
+
+class _$SignOutSuccessful implements SignOutSuccessful {
+  const _$SignOutSuccessful();
+
+  @override
+  String toString() {
+    return 'SignOut.successful()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is SignOutSuccessful);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function() $default, {
+    required TResult Function() successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return successful();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function()? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(SignOutStart value) $default, {
+    required TResult Function(SignOutSuccessful value) successful,
+    required TResult Function(SignOutError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(SignOutStart value)? $default, {
+    TResult Function(SignOutSuccessful value)? successful,
+    TResult Function(SignOutError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignOutSuccessful implements SignOut {
+  const factory SignOutSuccessful() = _$SignOutSuccessful;
+}
+
+/// @nodoc
+abstract class $SignOutErrorCopyWith<$Res> {
+  factory $SignOutErrorCopyWith(
+          SignOutError value, $Res Function(SignOutError) then) =
+      _$SignOutErrorCopyWithImpl<$Res>;
+  $Res call({Object error, StackTrace stackTrace});
+}
+
+/// @nodoc
+class _$SignOutErrorCopyWithImpl<$Res> extends _$SignOutCopyWithImpl<$Res>
+    implements $SignOutErrorCopyWith<$Res> {
+  _$SignOutErrorCopyWithImpl(
+      SignOutError _value, $Res Function(SignOutError) _then)
+      : super(_value, (v) => _then(v as SignOutError));
+
+  @override
+  SignOutError get _value => super._value as SignOutError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+    Object? stackTrace = freezed,
+  }) {
+    return _then(SignOutError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+      stackTrace == freezed
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements(ErrorAction)
+class _$SignOutError implements SignOutError {
+  const _$SignOutError(this.error, this.stackTrace);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+
+  @override
+  String toString() {
+    return 'SignOut.error(error: $error, stackTrace: $stackTrace)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SignOutError &&
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)) &&
+            (identical(other.stackTrace, stackTrace) ||
+                const DeepCollectionEquality()
+                    .equals(other.stackTrace, stackTrace)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(error) ^
+      const DeepCollectionEquality().hash(stackTrace);
+
+  @JsonKey(ignore: true)
+  @override
+  $SignOutErrorCopyWith<SignOutError> get copyWith =>
+      _$SignOutErrorCopyWithImpl<SignOutError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function() $default, {
+    required TResult Function() successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return error(this.error, stackTrace);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function()? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(SignOutStart value) $default, {
+    required TResult Function(SignOutSuccessful value) successful,
+    required TResult Function(SignOutError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(SignOutStart value)? $default, {
+    TResult Function(SignOutSuccessful value)? successful,
+    TResult Function(SignOutError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignOutError implements SignOut, ErrorAction {
+  const factory SignOutError(Object error, StackTrace stackTrace) =
+      _$SignOutError;
+
+  Object get error => throw _privateConstructorUsedError;
+  StackTrace get stackTrace => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SignOutErrorCopyWith<SignOutError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$InitAppTearOff {
+  const _$InitAppTearOff();
+
+  InitAppStart call() {
+    return const InitAppStart();
+  }
+
+  InitAppSuccessful successful(AppUser? user) {
+    return InitAppSuccessful(
+      user,
+    );
+  }
+
+  InitAppError error(Object error, StackTrace stackTrace) {
+    return InitAppError(
+      error,
+      stackTrace,
+    );
+  }
+}
+
+/// @nodoc
+const $InitApp = _$InitAppTearOff();
+
+/// @nodoc
+mixin _$InitApp {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function() $default, {
+    required TResult Function(AppUser? user) successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function()? $default, {
+    TResult Function(AppUser? user)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(InitAppStart value) $default, {
+    required TResult Function(InitAppSuccessful value) successful,
+    required TResult Function(InitAppError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(InitAppStart value)? $default, {
+    TResult Function(InitAppSuccessful value)? successful,
+    TResult Function(InitAppError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $InitAppCopyWith<$Res> {
+  factory $InitAppCopyWith(InitApp value, $Res Function(InitApp) then) =
+      _$InitAppCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$InitAppCopyWithImpl<$Res> implements $InitAppCopyWith<$Res> {
+  _$InitAppCopyWithImpl(this._value, this._then);
+
+  final InitApp _value;
+  // ignore: unused_field
+  final $Res Function(InitApp) _then;
+}
+
+/// @nodoc
+abstract class $InitAppStartCopyWith<$Res> {
+  factory $InitAppStartCopyWith(
+          InitAppStart value, $Res Function(InitAppStart) then) =
+      _$InitAppStartCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$InitAppStartCopyWithImpl<$Res> extends _$InitAppCopyWithImpl<$Res>
+    implements $InitAppStartCopyWith<$Res> {
+  _$InitAppStartCopyWithImpl(
+      InitAppStart _value, $Res Function(InitAppStart) _then)
+      : super(_value, (v) => _then(v as InitAppStart));
+
+  @override
+  InitAppStart get _value => super._value as InitAppStart;
+}
+
+/// @nodoc
+
+class _$InitAppStart implements InitAppStart {
+  const _$InitAppStart();
+
+  @override
+  String toString() {
+    return 'InitApp()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is InitAppStart);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function() $default, {
+    required TResult Function(AppUser? user) successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return $default();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function()? $default, {
+    TResult Function(AppUser? user)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(InitAppStart value) $default, {
+    required TResult Function(InitAppSuccessful value) successful,
+    required TResult Function(InitAppError value) error,
+  }) {
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(InitAppStart value)? $default, {
+    TResult Function(InitAppSuccessful value)? successful,
+    TResult Function(InitAppError value)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InitAppStart implements InitApp {
+  const factory InitAppStart() = _$InitAppStart;
+}
+
+/// @nodoc
+abstract class $InitAppSuccessfulCopyWith<$Res> {
+  factory $InitAppSuccessfulCopyWith(
+          InitAppSuccessful value, $Res Function(InitAppSuccessful) then) =
+      _$InitAppSuccessfulCopyWithImpl<$Res>;
+  $Res call({AppUser? user});
+}
+
+/// @nodoc
+class _$InitAppSuccessfulCopyWithImpl<$Res> extends _$InitAppCopyWithImpl<$Res>
+    implements $InitAppSuccessfulCopyWith<$Res> {
+  _$InitAppSuccessfulCopyWithImpl(
+      InitAppSuccessful _value, $Res Function(InitAppSuccessful) _then)
+      : super(_value, (v) => _then(v as InitAppSuccessful));
+
+  @override
+  InitAppSuccessful get _value => super._value as InitAppSuccessful;
+
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(InitAppSuccessful(
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as AppUser?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InitAppSuccessful implements InitAppSuccessful {
+  const _$InitAppSuccessful(this.user);
+
+  @override
+  final AppUser? user;
+
+  @override
+  String toString() {
+    return 'InitApp.successful(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InitAppSuccessful &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+
+  @JsonKey(ignore: true)
+  @override
+  $InitAppSuccessfulCopyWith<InitAppSuccessful> get copyWith =>
+      _$InitAppSuccessfulCopyWithImpl<InitAppSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function() $default, {
+    required TResult Function(AppUser? user) successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return successful(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function()? $default, {
+    TResult Function(AppUser? user)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(InitAppStart value) $default, {
+    required TResult Function(InitAppSuccessful value) successful,
+    required TResult Function(InitAppError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(InitAppStart value)? $default, {
+    TResult Function(InitAppSuccessful value)? successful,
+    TResult Function(InitAppError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InitAppSuccessful implements InitApp {
+  const factory InitAppSuccessful(AppUser? user) = _$InitAppSuccessful;
+
+  AppUser? get user => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InitAppSuccessfulCopyWith<InitAppSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $InitAppErrorCopyWith<$Res> {
+  factory $InitAppErrorCopyWith(
+          InitAppError value, $Res Function(InitAppError) then) =
+      _$InitAppErrorCopyWithImpl<$Res>;
+  $Res call({Object error, StackTrace stackTrace});
+}
+
+/// @nodoc
+class _$InitAppErrorCopyWithImpl<$Res> extends _$InitAppCopyWithImpl<$Res>
+    implements $InitAppErrorCopyWith<$Res> {
+  _$InitAppErrorCopyWithImpl(
+      InitAppError _value, $Res Function(InitAppError) _then)
+      : super(_value, (v) => _then(v as InitAppError));
+
+  @override
+  InitAppError get _value => super._value as InitAppError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+    Object? stackTrace = freezed,
+  }) {
+    return _then(InitAppError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+      stackTrace == freezed
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements(ErrorAction)
+class _$InitAppError implements InitAppError {
+  const _$InitAppError(this.error, this.stackTrace);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+
+  @override
+  String toString() {
+    return 'InitApp.error(error: $error, stackTrace: $stackTrace)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InitAppError &&
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)) &&
+            (identical(other.stackTrace, stackTrace) ||
+                const DeepCollectionEquality()
+                    .equals(other.stackTrace, stackTrace)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(error) ^
+      const DeepCollectionEquality().hash(stackTrace);
+
+  @JsonKey(ignore: true)
+  @override
+  $InitAppErrorCopyWith<InitAppError> get copyWith =>
+      _$InitAppErrorCopyWithImpl<InitAppError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function() $default, {
+    required TResult Function(AppUser? user) successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return error(this.error, stackTrace);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function()? $default, {
+    TResult Function(AppUser? user)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(InitAppStart value) $default, {
+    required TResult Function(InitAppSuccessful value) successful,
+    required TResult Function(InitAppError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(InitAppStart value)? $default, {
+    TResult Function(InitAppSuccessful value)? successful,
+    TResult Function(InitAppError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InitAppError implements InitApp, ErrorAction {
+  const factory InitAppError(Object error, StackTrace stackTrace) =
+      _$InitAppError;
+
+  Object get error => throw _privateConstructorUsedError;
+  StackTrace get stackTrace => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InitAppErrorCopyWith<InitAppError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$SelectedMovieTearOff {
   const _$SelectedMovieTearOff();
 

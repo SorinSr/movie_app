@@ -9,6 +9,10 @@ part 'get_movies_freezed.dart';
 
 part 'register.dart';
 
+part 'sign_out.dart';
+
+part 'init_app.dart';
+
 part 'selected_movie.dart';
 
 part 'index.freezed.dart';

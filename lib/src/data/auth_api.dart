@@ -44,7 +44,7 @@ class AuthApi {
     final AppUser user = AppUser((AppUserBuilder b) {
       b
         ..uid = userCredentials.user!.uid
-        ..username = userCredentials.user!.displayName
+        ..username = email.split('@').first
         ..email = email;
     });
 

@@ -4,8 +4,9 @@ import 'package:built_value/standard_json_plugin.dart';
 
 import 'app_state.dart';
 import 'movie.dart';
+import 'app_user.dart';
 
 part 'serializers.g.dart';
 
-@SerializersFor(<Type>[AppState, Movie])
+@SerializersFor(<Type>[AppUser, AppState, Movie])
 Serializers serializers = (_$serializers.toBuilder()..addPlugin(StandardJsonPlugin())).build();

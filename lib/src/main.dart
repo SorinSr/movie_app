@@ -3,9 +3,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:http/http.dart';
+import 'package:movies_app/src/actions/index.dart';
 import 'package:movies_app/src/data/auth_api.dart';
 import 'package:movies_app/src/data/movie_api.dart';
 import 'package:movies_app/src/model/app_state.dart';
+import 'package:movies_app/src/presentation/details_movie_page.dart';
+import 'package:movies_app/src/presentation/login_page.dart';
 import 'package:movies_app/src/presentation/presentation_page.dart';
 import 'package:movies_app/src/reducer/reducer.dart';
 import 'package:redux/redux.dart';
@@ -40,7 +43,8 @@ Future<void> main() async {
     ],
   );
 
-  // store.dispatch(const GetMoviesActionsStart());
+  store.dispatch(const GetMoviesActionsStart());
+  store.dispatch(const InitApp());
 
   runApp(
     MoviesApp(store: store),
@@ -59,6 +63,10 @@ class MoviesApp extends StatelessWidget {
       child: MaterialApp(
         home: const PresentationPage(),
         theme: ThemeData.light(),
+        routes: <String, WidgetBuilder>{
+          '/movieDetails': (BuildContext context) => const MovieDetails(),
+          '/loginPage': (BuildContext context) => const LoginPage(),
+        },
       ),
     );
   }

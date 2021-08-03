@@ -20,6 +20,8 @@ class AppEpics {
       <Epic<AppState>>[
         TypedEpic<AppState, GetMoviesActionsStart>(_getMovies),
         TypedEpic<AppState, RegisterStart>(_register),
+        TypedEpic<AppState, SignOutStart>(_signOut),
+        TypedEpic<AppState, InitAppStart>(_initApp),
       ],
     );
   }
@@ -33,13 +35,24 @@ class AppEpics {
   }
 
   Stream<AppAction> _register(Stream<RegisterStart> actions, EpicStore<AppState> store) {
-    return actions
-        .flatMap((RegisterStart action) => Stream<void>.value(null)
-        .asyncMap((RegisterStart) => _authApi.register(action.email, action.password))
+    return actions.flatMap((RegisterStart action) => Stream<void>.value(null)
+        .asyncMap((_) => _authApi.register(action.email, action.password))
         .map((AppUser user) => Register.successful(user))
         .onErrorReturnWith((Object error, StackTrace stackTrace) => Register.error(error, stackTrace))
         .doOnData(action.result));
   }
 
+  Stream<AppAction> _signOut(Stream<SignOutStart> actions, EpicStore<AppState> store) {
+    return actions
+        .asyncMap((SignOutStart action) => _authApi.signOut())
+        .map((_) => const SignOut.successful())
+        .onErrorReturnWith((Object error, StackTrace stackTrace) => SignOut.error(error, stackTrace));
+  }
 
+  Stream<AppAction> _initApp(Stream<InitAppStart> actions, EpicStore<AppState> store) {
+    return actions
+        .asyncMap((InitAppStart action) => _authApi.getCurrentUser())
+        .map((AppUser? user) => InitApp.successful(user))
+        .onErrorReturnWith((Object error, StackTrace stackTrace) => InitApp.error(error, stackTrace));
+  }
 }

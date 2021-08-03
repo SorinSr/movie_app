@@ -10,7 +10,6 @@ part 'movie.g.dart';
 
 abstract class Movie implements Built<Movie, MovieBuilder> {
   factory Movie([void Function(MovieBuilder b) updates]) = _$Movie;
-
   factory Movie.fromJson(dynamic json) => serializers.deserializeWith(serializer, json)!;
 
   Movie._();

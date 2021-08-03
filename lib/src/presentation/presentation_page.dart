@@ -6,9 +6,8 @@ import 'package:movies_app/src/container/is_loading_container.dart';
 import 'package:movies_app/src/container/movie_container.dart';
 import 'package:movies_app/src/model/app_state.dart';
 import 'package:movies_app/src/model/movie.dart';
+import 'package:movies_app/src/presentation/user_avatar.dart';
 import 'package:redux/redux.dart';
-
-import 'details_movie_page.dart';
 
 class PresentationPage extends StatefulWidget {
   const PresentationPage({Key? key}) : super(key: key);
@@ -52,6 +51,7 @@ class _PresentationPageState extends State<PresentationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: const UserAvatar(),
         title: const Text('MoviesApp The best App'),
         actions: <Widget>[
           IsLoadingContainer(
@@ -64,7 +64,6 @@ class _PresentationPageState extends State<PresentationPage> {
                   child: CircularProgressIndicator(),
                 );
               }
-
               return IconButton(
                 icon: const Icon(Icons.movie_filter_sharp),
                 onPressed: () {
@@ -110,12 +109,7 @@ class _PresentationPageState extends State<PresentationPage> {
                         onPressed: () {
                           print('Movie title:   ' + movie.title);
                           StoreProvider.of<AppState>(context).dispatch(SelectedMovie(movie.id));
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute<Widget>(
-                              builder: (BuildContext context) => const MovieDetails(),
-                            ),
-                          );
+                          Navigator.pushNamed(context, '/movieDetails');
                         },
                         icon: Image.network(movie.largeCoverImage),
                       ),
