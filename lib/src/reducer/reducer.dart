@@ -1,6 +1,5 @@
 import 'package:movies_app/src/actions/index.dart';
 import 'package:movies_app/src/model/app_state.dart';
-import 'package:movies_app/src/model/app_user.dart';
 import 'package:redux/redux.dart';
 
 Reducer<AppState> reducer = combineReducers(

@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_redux/flutter_redux.dart';
-import 'package:movies_app/src/actions/index.dart';
 import 'package:movies_app/src/container/movie_details_container.dart';
-import 'package:movies_app/src/model/app_state.dart';
 import 'package:movies_app/src/model/movie.dart';
-import 'package:redux/redux.dart';
 
 class MovieDetails extends StatelessWidget {
   const MovieDetails({Key? key}) : super(key: key);
