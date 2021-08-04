@@ -15,8 +15,7 @@ class _$ReviewSerializer implements StructuredSerializer<Review> {
   final String wireName = 'Review';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Review object,
-      {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object?> serialize(Serializers serializers, Review object, {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(String)),
@@ -27,8 +26,7 @@ class _$ReviewSerializer implements StructuredSerializer<Review> {
       'text',
       serializers.serialize(object.text, specifiedType: const FullType(String)),
       'dateCreated',
-      serializers.serialize(object.dateCreated,
-          specifiedType: const FullType(DateTime)),
+      serializers.serialize(object.dateCreated, specifiedType: const FullType(DateTime)),
     ];
 
     return result;
@@ -46,24 +44,19 @@ class _$ReviewSerializer implements StructuredSerializer<Review> {
       final Object? value = iterator.current;
       switch (key) {
         case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.id = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'uid':
-          result.uid = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.uid = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'movieId':
-          result.movieId = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.movieId = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'text':
-          result.text = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.text = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'dateCreated':
-          result.dateCreated = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
+          result.dateCreated = serializers.deserialize(value, specifiedType: const FullType(DateTime)) as DateTime;
           break;
       }
     }
@@ -84,15 +77,10 @@ class _$Review extends Review {
   @override
   final DateTime dateCreated;
 
-  factory _$Review([void Function(ReviewBuilder)? updates]) =>
-      (new ReviewBuilder()..update(updates)).build();
+  factory _$Review([void Function(ReviewBuilder)? updates]) => (new ReviewBuilder()..update(updates)).build();
 
   _$Review._(
-      {required this.id,
-      required this.uid,
-      required this.movieId,
-      required this.text,
-      required this.dateCreated})
+      {required this.id, required this.uid, required this.movieId, required this.text, required this.dateCreated})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, 'Review', 'id');
     BuiltValueNullFieldError.checkNotNull(uid, 'Review', 'uid');
@@ -102,8 +90,7 @@ class _$Review extends Review {
   }
 
   @override
-  Review rebuild(void Function(ReviewBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  Review rebuild(void Function(ReviewBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   ReviewBuilder toBuilder() => new ReviewBuilder()..replace(this);
@@ -121,10 +108,8 @@ class _$Review extends Review {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc($jc(0, id.hashCode), uid.hashCode), movieId.hashCode),
-            text.hashCode),
-        dateCreated.hashCode));
+    return $jf(
+        $jc($jc($jc($jc($jc(0, id.hashCode), uid.hashCode), movieId.hashCode), text.hashCode), dateCreated.hashCode));
   }
 
   @override
@@ -143,23 +128,33 @@ class ReviewBuilder implements Builder<Review, ReviewBuilder> {
   _$Review? _$v;
 
   String? _id;
+
   String? get id => _$this._id;
+
   set id(String? id) => _$this._id = id;
 
   String? _uid;
+
   String? get uid => _$this._uid;
+
   set uid(String? uid) => _$this._uid = uid;
 
   int? _movieId;
+
   int? get movieId => _$this._movieId;
+
   set movieId(int? movieId) => _$this._movieId = movieId;
 
   String? _text;
+
   String? get text => _$this._text;
+
   set text(String? text) => _$this._text = text;
 
   DateTime? _dateCreated;
+
   DateTime? get dateCreated => _$this._dateCreated;
+
   set dateCreated(DateTime? dateCreated) => _$this._dateCreated = dateCreated;
 
   ReviewBuilder();
@@ -194,11 +189,9 @@ class ReviewBuilder implements Builder<Review, ReviewBuilder> {
         new _$Review._(
             id: BuiltValueNullFieldError.checkNotNull(id, 'Review', 'id'),
             uid: BuiltValueNullFieldError.checkNotNull(uid, 'Review', 'uid'),
-            movieId: BuiltValueNullFieldError.checkNotNull(
-                movieId, 'Review', 'movieId'),
+            movieId: BuiltValueNullFieldError.checkNotNull(movieId, 'Review', 'movieId'),
             text: BuiltValueNullFieldError.checkNotNull(text, 'Review', 'text'),
-            dateCreated: BuiltValueNullFieldError.checkNotNull(
-                dateCreated, 'Review', 'dateCreated'));
+            dateCreated: BuiltValueNullFieldError.checkNotNull(dateCreated, 'Review', 'dateCreated'));
     replace(_$result);
     return _$result;
   }

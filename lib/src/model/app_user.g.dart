@@ -21,19 +21,14 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
       'uid',
       serializers.serialize(object.uid, specifiedType: const FullType(String)),
       'username',
-      serializers.serialize(object.username,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.username, specifiedType: const FullType(String)),
       'email',
-      serializers.serialize(object.email,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.email, specifiedType: const FullType(String)),
     ];
     Object? value;
     value = object.photoUrl;
     if (value != null) {
-      result
-        ..add('photoUrl')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+      result..add('photoUrl')..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     return result;
   }
@@ -50,20 +45,16 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
       final Object? value = iterator.current;
       switch (key) {
         case 'uid':
-          result.uid = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.uid = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'username':
-          result.username = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.username = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'email':
-          result.email = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.email = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'photoUrl':
-          result.photoUrl = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+          result.photoUrl = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -82,23 +73,16 @@ class _$AppUser extends AppUser {
   @override
   final String? photoUrl;
 
-  factory _$AppUser([void Function(AppUserBuilder)? updates]) =>
-      (new AppUserBuilder()..update(updates)).build();
+  factory _$AppUser([void Function(AppUserBuilder)? updates]) => (new AppUserBuilder()..update(updates)).build();
 
-  _$AppUser._(
-      {required this.uid,
-      required this.username,
-      required this.email,
-      this.photoUrl})
-      : super._() {
+  _$AppUser._({required this.uid, required this.username, required this.email, this.photoUrl}) : super._() {
     BuiltValueNullFieldError.checkNotNull(uid, 'AppUser', 'uid');
     BuiltValueNullFieldError.checkNotNull(username, 'AppUser', 'username');
     BuiltValueNullFieldError.checkNotNull(email, 'AppUser', 'email');
   }
 
   @override
-  AppUser rebuild(void Function(AppUserBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  AppUser rebuild(void Function(AppUserBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   AppUserBuilder toBuilder() => new AppUserBuilder()..replace(this);
@@ -115,9 +99,7 @@ class _$AppUser extends AppUser {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc(0, uid.hashCode), username.hashCode), email.hashCode),
-        photoUrl.hashCode));
+    return $jf($jc($jc($jc($jc(0, uid.hashCode), username.hashCode), email.hashCode), photoUrl.hashCode));
   }
 
   @override
@@ -135,19 +117,27 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
   _$AppUser? _$v;
 
   String? _uid;
+
   String? get uid => _$this._uid;
+
   set uid(String? uid) => _$this._uid = uid;
 
   String? _username;
+
   String? get username => _$this._username;
+
   set username(String? username) => _$this._username = username;
 
   String? _email;
+
   String? get email => _$this._email;
+
   set email(String? email) => _$this._email = email;
 
   String? _photoUrl;
+
   String? get photoUrl => _$this._photoUrl;
+
   set photoUrl(String? photoUrl) => _$this._photoUrl = photoUrl;
 
   AppUserBuilder();
@@ -180,10 +170,8 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
     final _$result = _$v ??
         new _$AppUser._(
             uid: BuiltValueNullFieldError.checkNotNull(uid, 'AppUser', 'uid'),
-            username: BuiltValueNullFieldError.checkNotNull(
-                username, 'AppUser', 'username'),
-            email: BuiltValueNullFieldError.checkNotNull(
-                email, 'AppUser', 'email'),
+            username: BuiltValueNullFieldError.checkNotNull(username, 'AppUser', 'username'),
+            email: BuiltValueNullFieldError.checkNotNull(email, 'AppUser', 'email'),
             photoUrl: photoUrl);
     replace(_$result);
     return _$result;

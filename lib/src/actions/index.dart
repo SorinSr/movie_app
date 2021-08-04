@@ -1,6 +1,7 @@
 library actions;
 
 import 'package:movies_app/src/model/movie.dart';
+import 'package:movies_app/src/model/review.dart';
 import 'package:movies_app/src/model/app_user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:movies_app/src/actions/index.dart';
