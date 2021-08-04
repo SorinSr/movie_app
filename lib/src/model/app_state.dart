@@ -38,7 +38,6 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
 
   BuiltList<Review> get reviews;
 
-
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this)! as Map<String, dynamic>;
 
   static Serializer<AppState> get serializer => _$appStateSerializer;

@@ -7,7 +7,6 @@ import 'package:http/http.dart';
 import 'package:movies_app/src/actions/index.dart';
 import 'package:movies_app/src/data/auth_api.dart';
 import 'package:movies_app/src/data/movie_api.dart';
-import 'package:movies_app/src/data/review_api.dart';
 import 'package:movies_app/src/model/app_state.dart';
 import 'package:movies_app/src/presentation/details_movie_page.dart';
 import 'package:movies_app/src/presentation/login_page.dart';
@@ -30,10 +29,13 @@ Future<void> main() async {
   final Client client = Client();
 
   final MoviesApi moviesApi = MoviesApi(apiUrl: apiUrl, client: client);
-  final ReviewApi reviewApi = ReviewApi(firebaseFirestore: _firebaseFirestore);
+  // final ReviewApi reviewApi = ReviewApi(firebaseFirestore: _firebaseFirestore);
   final AuthApi authApi = AuthApi(firebaseAuth: _firebaseAuth, firebaseFirestore: _firebaseFirestore);
 
-  final AppEpics appEpics = AppEpics(moviesApi: moviesApi, authApi: authApi, reviewApi: reviewApi);
+  final AppEpics appEpics = AppEpics(
+    moviesApi: moviesApi, authApi: authApi,
+    // reviewApi: reviewApi
+  );
 
   final Store<AppState> store = Store<AppState>(
     reducer,
