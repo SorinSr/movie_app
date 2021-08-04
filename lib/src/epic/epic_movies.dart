@@ -1,19 +1,23 @@
 import 'package:movies_app/src/actions/index.dart';
 import 'package:movies_app/src/data/auth_api.dart';
 import 'package:movies_app/src/data/movie_api.dart';
+import 'package:movies_app/src/data/review_api.dart';
 import 'package:movies_app/src/model/app_state.dart';
 import 'package:movies_app/src/model/app_user.dart';
 import 'package:movies_app/src/model/movie.dart';
+import 'package:movies_app/src/model/review.dart';
 import 'package:redux_epics/redux_epics.dart';
 import 'package:rxdart/rxdart.dart';
 
 class AppEpics {
-  const AppEpics({required MoviesApi moviesApi, required AuthApi authApi})
+  const AppEpics({required MoviesApi moviesApi, required AuthApi authApi, required ReviewApi reviewApi})
       : _moviesApi = moviesApi,
+        _reviewApi = reviewApi,
         _authApi = authApi;
 
   final MoviesApi _moviesApi;
   final AuthApi _authApi;
+  final ReviewApi _reviewApi;
 
   Epic<AppState> get epic {
     return combineEpics(
@@ -22,6 +26,7 @@ class AppEpics {
         TypedEpic<AppState, RegisterStart>(_register),
         TypedEpic<AppState, SignOutStart>(_signOut),
         TypedEpic<AppState, InitAppStart>(_initApp),
+        // TypedEpic<AppState, GetReviewsStart>(_getReviews),
       ],
     );
   }
@@ -55,4 +60,17 @@ class AppEpics {
         .map((AppUser? user) => InitApp.successful(user))
         .onErrorReturnWith((Object error, StackTrace stackTrace) => InitApp.error(error, stackTrace));
   }
+
+  // Stream<AppAction> _getReviews(Stream<GetReviewsStart> actions, EpicStore<AppState> store) {
+  //   return actions
+  //       .flatMap((GetReviewsStart action) => Stream<void>.value(null)
+  //
+  //       .asyncMap((_) => _reviewApi.getReviews(store.state.selectedMovie!))
+  //       .expand((List<Review> reviews) {
+  //         return <AppAction>[
+  //           GetReviews.successful(reviews),
+  //           (reviews.map((Review review) => review.uid).toSet().toList()),
+  //         ];
+  //   }).onErrorReturnWith((Object error, StackTrace stackTrace) => GetReviews.error(error, stackTrace)));
+
 }

@@ -11,6 +11,12 @@ part 'register.dart';
 
 part 'sign_out.dart';
 
+part 'get_reviews.dart';
+
+part 'get_users.dart';
+
+part 'create_comment.dart';
+
 part 'init_app.dart';
 
 part 'selected_movie.dart';
