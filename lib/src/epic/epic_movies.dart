@@ -74,5 +74,4 @@ class AppEpics {
 //           (reviews.map((Review review) => review.uid).toSet().toList()),
 //         ];
 //   }).onErrorReturnWith((Object error, StackTrace stackTrace) => GetReviews.error(error, stackTrace)));
-
 }
