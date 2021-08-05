@@ -8,10 +8,7 @@ import 'package:redux_epics/redux_epics.dart';
 import 'package:rxdart/rxdart.dart';
 
 class AppEpics {
-  const AppEpics({
-    required MoviesApi moviesApi,
-    required AuthApi authApi,
-  })
+  const AppEpics({required MoviesApi moviesApi, required AuthApi authApi})
       : _moviesApi = moviesApi,
         _authApi = authApi;
 
@@ -37,12 +34,11 @@ class AppEpics {
   }
 
   Stream<AppAction> _register(Stream<RegisterStart> actions, EpicStore<AppState> store) {
-    return actions.flatMap((RegisterStart action) =>
-        Stream<void>.value(null)
-            .asyncMap((_) => _authApi.register(action.email, action.password))
-            .map((AppUser user) => Register.successful(user))
-            .onErrorReturnWith((Object error, StackTrace stackTrace) => Register.error(error, stackTrace))
-            .doOnData(action.result));
+    return actions.flatMap((RegisterStart action) => Stream<void>.value(null)
+        .asyncMap((_) => _authApi.register(action.email, action.password))
+        .map((AppUser user) => Register.successful(user))
+        .onErrorReturnWith((Object error, StackTrace stackTrace) => Register.error(error, stackTrace))
+        .doOnData(action.result));
   }
 
   Stream<AppAction> _signOut(Stream<SignOutStart> actions, EpicStore<AppState> store) {
