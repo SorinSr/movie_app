@@ -11,7 +11,8 @@ class AppEpics {
   const AppEpics({
     required MoviesApi moviesApi,
     required AuthApi authApi,
-  })   : _moviesApi = moviesApi,
+  })
+      : _moviesApi = moviesApi,
         _authApi = authApi;
 
   final MoviesApi _moviesApi;
@@ -36,11 +37,12 @@ class AppEpics {
   }
 
   Stream<AppAction> _register(Stream<RegisterStart> actions, EpicStore<AppState> store) {
-    return actions.flatMap((RegisterStart action) => Stream<void>.value(null)
-        .asyncMap((_) => _authApi.register(action.email, action.password))
-        .map((AppUser user) => Register.successful(user))
-        .onErrorReturnWith((Object error, StackTrace stackTrace) => Register.error(error, stackTrace))
-        .doOnData(action.result));
+    return actions.flatMap((RegisterStart action) =>
+        Stream<void>.value(null)
+            .asyncMap((_) => _authApi.register(action.email, action.password))
+            .map((AppUser user) => Register.successful(user))
+            .onErrorReturnWith((Object error, StackTrace stackTrace) => Register.error(error, stackTrace))
+            .doOnData(action.result));
   }
 
   Stream<AppAction> _signOut(Stream<SignOutStart> actions, EpicStore<AppState> store) {
