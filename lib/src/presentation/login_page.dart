@@ -63,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                     TextFormField(
                       controller: _password,
                       decoration: InputDecoration(
-                        labelText: 'password',
+                        labelText: 'Password',
                         suffix: IconButton(
                           icon: Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
                           onPressed: () {
