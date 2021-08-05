@@ -16,7 +16,7 @@ import 'package:movies_app/src/reducer/reducer.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
 
-import 'epic/epic_movies.dart';
+import 'epic/epics.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
